@@ -53,6 +53,20 @@ color:#798A9F;
 ;
 }
 
-.hidden {
-    display: none;
+.container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.editar-underline {
+font-family: 'Noto Sans';
+font-weight: 700;
+font-size: 30px;
+color: black;
+display: inline-block;
+margin: 0 5px;
+width: 15px;
+text-Align:center
 }
