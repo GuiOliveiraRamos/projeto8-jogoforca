@@ -43,21 +43,33 @@ export default function Jogo({}) {
   }
 
   const verificarLetra = (letra) => {
-    let acertou = false;
+
+    let acertou = false
+
     const novaPalavra = palavraEscolhida.map((l) => {
+
       if (l.valor === letra) {
-        acertou = true;
+
+        acertou = true
+
         console.log("acertou")
-        return { ...l, acertou: true };
+
+        return { ...l, acertou: true }
+
       }
       console.log("errou")
-      return l;
-    });
-    setPalavraEscolhida(novaPalavra);
+
+      return l
+
+    })
+    setPalavraEscolhida(novaPalavra)
+
     if (!acertou) {
-      setErros(erros + 1);
+
+      setErros(erros + 1)
+
     }
-  };
+  }
   
   return (
     <div className="container-pai">
