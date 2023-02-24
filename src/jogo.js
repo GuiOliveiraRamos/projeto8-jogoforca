@@ -14,7 +14,6 @@ export default function Jogo({}) {
   const [escolherPalavra, setEscolherPalavra] = useState("")
   const [palavraEscolhida, setPalavraEscolhida] = useState([])
   const [erros, setErros] = useState(0)
-  const [ganhou, setGanhou] = useState(false)
 
   const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
@@ -37,31 +36,28 @@ export default function Jogo({}) {
 
     setErros(0)
 
-    setGanhou(false)
-
   }
     
-  const underline = (letra) => {
-    return <span className = "editar-underline">{letra}</span>
+  const underline = () => {
+    return <span className="editar-underline">_</span>
   }
 
   const verificarLetra = (letra) => {
     let acertou = false;
-    setPalavraEscolhida(
-      palavraEscolhida.map((l) => {
-        if (l.valor === letra) {
-          acertou = true;
-          return { ...l, acertou: true };
-        } else {
-          return l;
-        }
-      })
-    );
+    const novaPalavra = palavraEscolhida.map((l) => {
+      if (l.valor === letra) {
+        acertou = true;
+        console.log("acertou")
+        return { ...l, acertou: true };
+      }
+      console.log("errou")
+      return l;
+    });
+    setPalavraEscolhida(novaPalavra);
     if (!acertou) {
       setErros(erros + 1);
     }
   };
- 
   
   return (
     <div className="container-pai">
