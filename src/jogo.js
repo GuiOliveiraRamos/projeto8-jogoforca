@@ -48,7 +48,7 @@ export default function Jogo({}) {
 
     const novaPalavra = palavraEscolhida.map((l) => {
 
-      if (l.valor === letra) {
+      if (l.valor === letra.toLowerCase()) {
 
         acertou = true
 
