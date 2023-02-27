@@ -70,3 +70,11 @@ margin: 0 5px;
 width: 15px;
 text-Align:center
 }
+
+.acertou {
+    color: #27AE60;
+}
+
+.errou {
+color: #FF0000;
+}
