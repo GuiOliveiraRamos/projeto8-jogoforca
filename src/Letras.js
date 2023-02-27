@@ -5,7 +5,7 @@ export default function Letras({ verificarLetra, ativarLetras}) {
     return (
       <div className="alfabeto">
         {alfabeto.map((letra) => (
-          <button data-test="letter" disabled={ativarLetras} key={letra} onClick={() => verificarLetra(letra)}>
+          <button data-test="letter" className={`botao ${ativarLetras ? 'desabilitado' : 'habilitado'}` } disabled={ativarLetras} key={letra} onClick={() => verificarLetra(letra)}>
             {letra}
           </button>
         ))}

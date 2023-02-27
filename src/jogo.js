@@ -103,7 +103,7 @@ export default function Jogo({}) {
       <div key="container" className="container">
         <img data-test="game-image" className="" src={images[erros]} alt={images[erros]}></img>
         <div className="container-right">
-          <button data-test = "choose-word" onClick={comecarJogo}>Escolher Palavra</button>
+          <button data-test="choose-word" onClick={comecarJogo}>Escolher Palavra</button>
           <div className={`palavra-escolhida ${ganhou ? 'acertou' : ''} ${perdeu ? 'errou' : ''}`}>
             {palavraEscolhida.map((letra, index) => (
               <span data-test="word" key={index}>

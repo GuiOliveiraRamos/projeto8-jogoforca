@@ -43,14 +43,12 @@ justify-content: space-between;
 height: 40px;
 margin-right: 12px;
 margin-bottom: 11px;
-background: #9FAAB5;
 border: 1px solid #7AA7C7;
 border-radius: 3px;
 font-weight: 700;
 font-size: 16px;
 line-height: 19px;
 color:#798A9F;
-;
 }
 
 .container-right {
@@ -78,3 +76,12 @@ text-Align:center
 .errou {
 color: #FF0000;
 }
+
+.desabilitado { 
+    background: #9FAAB5 !important;
+}
+
+.habilitado {
+    background: #E1ECF4 !important;
+}
+
