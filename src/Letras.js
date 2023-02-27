@@ -5,7 +5,7 @@ export default function Letras({ verificarLetra }) {
     return (
       <div className="alfabeto">
         {alfabeto.map((letra) => (
-          <button key={letra} onClick={() => verificarLetra(letra)}>
+          <button data-test="letter"key={letra} onClick={() => verificarLetra(letra)}>
             {letra}
           </button>
         ))}

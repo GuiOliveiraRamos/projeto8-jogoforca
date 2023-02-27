@@ -74,12 +74,12 @@ export default function Jogo({}) {
   return (
     <div className="container-pai">
       <div key="container" className="container">
-        <img className="" src={images[erros]} alt={images[erros]}></img>
+        <img data-test="game-image" className="" src={images[erros]} alt={images[erros]}></img>
         <div className="container-right">
-          <button onClick={comecarJogo}>Escolher Palavra</button>
+          <button data-test = "choose-word" onClick={comecarJogo}>Escolher Palavra</button>
           <div >
             {palavraEscolhida.map((letra, index) => (
-              <span key={index}>
+              <span data-test="word" key={index}>
                 {letra.acertou ? letra.valor : underline("_")}
               </span>
             ))}
