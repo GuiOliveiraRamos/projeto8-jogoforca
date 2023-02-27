@@ -6,7 +6,7 @@ import forca3 from "./assets/forca3.png"
 import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
-import { useState, useEffect } from "react"
+import {useState} from "react"
 import Letras from "./Letras"
 
 export default function Jogo() {
@@ -47,7 +47,7 @@ export default function Jogo() {
     return <span className="editar-underline">_</span>
   }
 
-    const verificarLetra = (letra) => {
+  const verificarLetra = (letra) => {
 
     let acertou = false
 
@@ -56,18 +56,15 @@ export default function Jogo() {
       if (l.valor === letra.toLowerCase()) {
 
         acertou = true
-
         setAtivarLetras(false)
-
         console.log("acertou")
 
         return { ...l, acertou: true }
 
       }
       console.log("errou")
-
       setAtivarLetras(false)
-      
+
       return l
 
     })
@@ -79,8 +76,8 @@ export default function Jogo() {
 
     }
 
-setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
-
+    setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
+    
     if (!novaPalavra.some((letra) => !letra.acertou)) {
   
       setGanhou(true)
@@ -89,7 +86,7 @@ setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
       
 }
 
-    if (erros + 1 === images.length) {
+    if (erros +1 === images.length -1) {
   
       setPerdeu(true)
       
