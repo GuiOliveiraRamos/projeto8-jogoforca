@@ -53,6 +53,7 @@ export default function Jogo({}) {
     if (!palavraEscolhida.some((letra) => !letra.acertou)) {
 
       setGanhou(true)
+      setAtivarLetras(true)
 
     }
   }, [palavraEscolhida, erros])
@@ -77,13 +78,14 @@ export default function Jogo({}) {
       if (l.valor === letra.toLowerCase()) {
 
         acertou = true
-
+        setAtivarLetras(false)
         console.log("acertou")
 
         return { ...l, acertou: true }
 
       }
       console.log("errou")
+      setAtivarLetras(false)
 
       return l
 
