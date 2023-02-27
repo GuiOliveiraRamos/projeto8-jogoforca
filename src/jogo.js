@@ -9,7 +9,7 @@ import forca6 from "./assets/forca6.png"
 import { useState, useEffect } from "react"
 import Letras from "./Letras"
 
-export default function Jogo({}) {
+export default function Jogo() {
 
   const [palavraEscolhida, setPalavraEscolhida] = useState([])
   const [erros, setErros] = useState(0)
@@ -107,7 +107,7 @@ setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
         <img data-test="game-image" className="" src={images[erros]} alt={images[erros]}></img>
         <div className="container-right">
           <button data-test="choose-word" onClick={comecarJogo}>Escolher Palavra</button>
-          <div className={`palavra-escolhida ${ganhou ? 'acertou' : ''} ${perdeu ? 'errou' : ''}`}>
+          <div data-test="word" className={`palavra-escolhida ${ganhou ? 'acertou' : ''} ${perdeu ? 'errou' : ''}`}>
             {palavraEscolhida.map((letra, index) => (
               <span data-test="word" key={index}>
                 {letra.acertou || perdeu ? letra.valor : underline("_")}
