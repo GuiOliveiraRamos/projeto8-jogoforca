@@ -11,12 +11,13 @@ import Letras from "./Letras"
 
 export default function Jogo({}) {
 
-  const [escolherPalavra, setEscolherPalavra] = useState("")
   const [palavraEscolhida, setPalavraEscolhida] = useState([])
   const [erros, setErros] = useState(0)
   const [ativarLetras, setAtivarLetras] = useState(true)
   const [ganhou, setGanhou] = useState(false)
   const [perdeu, setPerdeu] = useState(false)
+  const [letrasEscolhidas, setLetrasEscolhidas] = useState([]);
+
   
   const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
@@ -30,9 +31,7 @@ export default function Jogo({}) {
   const comecarJogo = () => {
 
     const pegarAleatoria = palavraAleatoria()
-
-    setEscolherPalavra(pegarAleatoria)
-    
+ 
     setPalavraEscolhida(
       pegarAleatoria.split("").map((letra) => ({ valor: letra, acertou: false }))
     )
@@ -98,6 +97,8 @@ export default function Jogo({}) {
 
     }
 
+setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
+
   }
   
   return (
@@ -115,7 +116,7 @@ export default function Jogo({}) {
           </div>
         </div>
       </div>
-      <Letras ativarLetras={ativarLetras} verificarLetra={verificarLetra} />
+      <Letras ativarLetras={ativarLetras} verificarLetra={verificarLetra} letrasEscolhidas={letrasEscolhidas} />
     </div>
   )
 }
