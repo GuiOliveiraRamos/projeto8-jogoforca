@@ -47,28 +47,7 @@ export default function Jogo() {
     return <span className="editar-underline">_</span>
   }
 
-  useEffect(() => {
-
-    if (!palavraEscolhida.some((letra) => !letra.acertou)) {
-
-      setGanhou(true)
-      setAtivarLetras(true)
-
-    }
-  }, [palavraEscolhida, erros])
-
-
-  useEffect(() => {
-
-    if (erros + 1 === images.length) {
-
-      setPerdeu(true)
-      setAtivarLetras(true)
-
-    }
-  }, [erros])
-
-  const verificarLetra = (letra) => {
+    const verificarLetra = (letra) => {
 
     let acertou = false
 
@@ -77,15 +56,18 @@ export default function Jogo() {
       if (l.valor === letra.toLowerCase()) {
 
         acertou = true
+
         setAtivarLetras(false)
+
         console.log("acertou")
 
         return { ...l, acertou: true }
 
       }
       console.log("errou")
-      setAtivarLetras(false)
 
+      setAtivarLetras(false)
+      
       return l
 
     })
@@ -99,6 +81,21 @@ export default function Jogo() {
 
 setLetrasEscolhidas([...letrasEscolhidas, letra.toLowerCase()])
 
+    if (!novaPalavra.some((letra) => !letra.acertou)) {
+  
+      setGanhou(true)
+      
+      setAtivarLetras(true)
+      
+}
+
+    if (erros + 1 === images.length) {
+  
+      setPerdeu(true)
+      
+      setAtivarLetras(true)
+      
+}
   }
   
   return (
